@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://playmobile.pl/channel/utils" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/soap/http" xmlns:ns2="http://esb.p4.org" xmlns:ns1="http://project4.pl/utils" name="queueMessage-1" targetNamespace="http://playmobile.pl/channel/utils">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://project4.pl/utils" elementFormDefault="qualified" targetNamespace="http://project4.pl/utils" version="1.0">
+
+  <xs:element name="cancelMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="systemName" type="xs:string"/>
+        <xs:element name="systemId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="queueMessage">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tns:queueMessageType">
+          <xs:sequence/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="queueMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="message" type="tns:queueMessageType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="queueMessageType">
+    <xs:sequence>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element minOccurs="0" name="title" type="xs:string"/>
+      <xs:element minOccurs="0" name="content" type="xs:string"/>
+      <xs:element minOccurs="0" name="signature" type="xs:string"/>
+      <xs:element minOccurs="0" name="attachments" type="xs:string"/>
+      <xs:element minOccurs="0" name="inlines" type="xs:string"/>
+      <xs:element name="addressTo" type="xs:string"/>
+      <xs:element name="addressFrom" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateToSend" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="validity" type="xs:int"/>
+      <xs:element minOccurs="0" name="hourFrom" type="xs:int"/>
+      <xs:element minOccurs="0" name="hourTo" type="xs:int"/>
+      <xs:element minOccurs="0" name="deliveryReport" type="xs:boolean"/>
+      <xs:element name="systemName" type="xs:string"/>
+      <xs:element minOccurs="0" name="systemUserName" type="xs:string"/>
+      <xs:element minOccurs="0" name="systemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://esb.p4.org" elementFormDefault="qualified" targetNamespace="http://esb.p4.org" version="1.0">
+
+  <xs:element name="ServiceFault" type="tns:ServiceFault"/>
+
+  <xs:complexType name="ServiceFault">
+    <xs:sequence>
+      <xs:element name="exceptionClass" type="xs:string"/>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="queueMessageResponse">
+  </wsdl:message>
+  <wsdl:message name="queueMessages">
+    <wsdl:part element="ns1:queueMessages" name="queueMessages">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queueMessage">
+    <wsdl:part element="ns1:queueMessage" name="queueMessage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelMessageResponse">
+  </wsdl:message>
+  <wsdl:message name="ServiceFault">
+    <wsdl:part element="ns2:ServiceFault" name="ServiceFault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelMessage">
+    <wsdl:part element="ns1:cancelMessage" name="cancelMessage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queueMessagesResponse">
+  </wsdl:message>
+  <wsdl:portType name="queueMessagePortType">
+    <wsdl:operation name="cancelMessage">
+      <wsdl:input message="tns:cancelMessage" name="cancelMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:cancelMessageResponse" name="cancelMessageResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:ServiceFault" name="ServiceFault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queueMessage">
+      <wsdl:input message="tns:queueMessage" name="queueMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:queueMessageResponse" name="queueMessageResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:ServiceFault" name="ServiceFault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queueMessages">
+      <wsdl:input message="tns:queueMessages" name="queueMessages">
+    </wsdl:input>
+      <wsdl:output message="tns:queueMessagesResponse" name="queueMessagesResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:ServiceFault" name="ServiceFault">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="queueMessageBinding" type="tns:queueMessagePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cancelMessage">
+      <soap:operation soapAction="http://project4.pl/utils/cancelMessage" style="document"/>
+      <wsdl:input name="cancelMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFault">
+        <soap:fault name="ServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queueMessage">
+      <soap:operation soapAction="http://project4.pl/utils/queueMessage" style="document"/>
+      <wsdl:input name="queueMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queueMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFault">
+        <soap:fault name="ServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queueMessages">
+      <soap:operation soapAction="http://project4.pl/utils/queueMessages" style="document"/>
+      <wsdl:input name="queueMessages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queueMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFault">
+        <soap:fault name="ServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="queueMessage-1">
+    <wsdl:port binding="tns:queueMessageBinding" name="default">
+      <soap:address location="http://smxlb:8040/queuemessage"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
