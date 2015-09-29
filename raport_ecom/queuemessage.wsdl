@@ -21,6 +21,7 @@
     </xs:complexType>
   </xs:element>
 
+
   <xs:element name="queueMessages">
     <xs:complexType>
       <xs:sequence>
@@ -28,6 +29,8 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+
 
   <xs:complexType name="queueMessageType">
     <xs:sequence>

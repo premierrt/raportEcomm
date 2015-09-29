@@ -1,199 +1,117 @@
-/**
- * ServiceFault.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
- */
 
 package org.p4.esb;
 
-public class ServiceFault  extends org.apache.axis.AxisFault  implements java.io.Serializable {
-    private java.lang.String exceptionClass;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-    private java.lang.String code;
 
-    private java.lang.String message1;
+/**
+ * <p>Java class for ServiceFault complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="ServiceFault">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="exceptionClass" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ServiceFault", propOrder = {
+    "exceptionClass",
+    "code",
+    "message"
+})
+public class ServiceFault {
 
-    public ServiceFault() {
-    }
-
-    public ServiceFault(
-           java.lang.String exceptionClass,
-           java.lang.String code,
-           java.lang.String message1) {
-        this.exceptionClass = exceptionClass;
-        this.code = code;
-        this.message1 = message1;
-    }
-
+    @XmlElement(required = true)
+    protected String exceptionClass;
+    @XmlElement(required = true)
+    protected String code;
+    protected String message;
 
     /**
-     * Gets the exceptionClass value for this ServiceFault.
+     * Gets the value of the exceptionClass property.
      * 
-     * @return exceptionClass
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getExceptionClass() {
+    public String getExceptionClass() {
         return exceptionClass;
     }
 
-
     /**
-     * Sets the exceptionClass value for this ServiceFault.
+     * Sets the value of the exceptionClass property.
      * 
-     * @param exceptionClass
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setExceptionClass(java.lang.String exceptionClass) {
-        this.exceptionClass = exceptionClass;
+    public void setExceptionClass(String value) {
+        this.exceptionClass = value;
     }
 
-
     /**
-     * Gets the code value for this ServiceFault.
+     * Gets the value of the code property.
      * 
-     * @return code
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getCode() {
+    public String getCode() {
         return code;
     }
 
-
     /**
-     * Sets the code value for this ServiceFault.
+     * Sets the value of the code property.
      * 
-     * @param code
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setCode(java.lang.String code) {
-        this.code = code;
+    public void setCode(String value) {
+        this.code = value;
     }
 
-
     /**
-     * Gets the message1 value for this ServiceFault.
+     * Gets the value of the message property.
      * 
-     * @return message1
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getMessage1() {
-        return message1;
+    public String getMessage() {
+        return message;
     }
 
-
     /**
-     * Sets the message1 value for this ServiceFault.
+     * Sets the value of the message property.
      * 
-     * @param message1
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setMessage1(java.lang.String message1) {
-        this.message1 = message1;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof ServiceFault)) return false;
-        ServiceFault other = (ServiceFault) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.exceptionClass==null && other.getExceptionClass()==null) || 
-             (this.exceptionClass!=null &&
-              this.exceptionClass.equals(other.getExceptionClass()))) &&
-            ((this.code==null && other.getCode()==null) || 
-             (this.code!=null &&
-              this.code.equals(other.getCode()))) &&
-            ((this.message1==null && other.getMessage1()==null) || 
-             (this.message1!=null &&
-              this.message1.equals(other.getMessage1())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getExceptionClass() != null) {
-            _hashCode += getExceptionClass().hashCode();
-        }
-        if (getCode() != null) {
-            _hashCode += getCode().hashCode();
-        }
-        if (getMessage1() != null) {
-            _hashCode += getMessage1().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
-    // Type metadata
-    private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(ServiceFault.class, true);
-
-    static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://esb.p4.org", "ServiceFault"));
-        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("exceptionClass");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://esb.p4.org", "exceptionClass"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("code");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://esb.p4.org", "code"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("message1");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://esb.p4.org", "message"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-    }
-
-    /**
-     * Return type metadata object
-     */
-    public static org.apache.axis.description.TypeDesc getTypeDesc() {
-        return typeDesc;
-    }
-
-    /**
-     * Get Custom Serializer
-     */
-    public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanSerializer(
-            _javaType, _xmlType, typeDesc);
-    }
-
-    /**
-     * Get Custom Deserializer
-     */
-    public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanDeserializer(
-            _javaType, _xmlType, typeDesc);
-    }
-
-
-    /**
-     * Writes the exception data to the faultDetails
-     */
-    public void writeDetails(javax.xml.namespace.QName qname, org.apache.axis.encoding.SerializationContext context) throws java.io.IOException {
-        context.serialize(qname, null, this);
-    }
 }

@@ -1,671 +1,477 @@
-/**
- * QueueMessageType.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
- */
 
 package pl.project4.utils;
 
-public class QueueMessageType  implements java.io.Serializable {
-    private java.lang.String type;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-    private java.lang.String title;
 
-    private java.lang.String content;
+/**
+ * <p>Java class for queueMessageType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="queueMessageType">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="content" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="signature" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="attachments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="inlines" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="addressTo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="addressFrom" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="dateToSend" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="validity" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="hourFrom" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="hourTo" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="deliveryReport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="systemName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="systemUserName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="systemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "queueMessageType", propOrder = {
+    "type",
+    "title",
+    "content",
+    "signature",
+    "attachments",
+    "inlines",
+    "addressTo",
+    "addressFrom",
+    "dateToSend",
+    "validity",
+    "hourFrom",
+    "hourTo",
+    "deliveryReport",
+    "systemName",
+    "systemUserName",
+    "systemId"
+})
+@XmlSeeAlso({
+    QueueMessage.class
+})
+public class QueueMessageType {
 
-    private java.lang.String signature;
-
-    private java.lang.String attachments;
-
-    private java.lang.String inlines;
-
-    private java.lang.String addressTo;
-
-    private java.lang.String addressFrom;
-
-    private java.util.Calendar dateToSend;
-
-    private java.lang.Integer validity;
-
-    private java.lang.Integer hourFrom;
-
-    private java.lang.Integer hourTo;
-
-    private java.lang.Boolean deliveryReport;
-
-    private java.lang.String systemName;
-
-    private java.lang.String systemUserName;
-
-    private java.lang.String systemId;
-
-    public QueueMessageType() {
-    }
-
-    public QueueMessageType(
-           java.lang.String type,
-           java.lang.String title,
-           java.lang.String content,
-           java.lang.String signature,
-           java.lang.String attachments,
-           java.lang.String inlines,
-           java.lang.String addressTo,
-           java.lang.String addressFrom,
-           java.util.Calendar dateToSend,
-           java.lang.Integer validity,
-           java.lang.Integer hourFrom,
-           java.lang.Integer hourTo,
-           java.lang.Boolean deliveryReport,
-           java.lang.String systemName,
-           java.lang.String systemUserName,
-           java.lang.String systemId) {
-           this.type = type;
-           this.title = title;
-           this.content = content;
-           this.signature = signature;
-           this.attachments = attachments;
-           this.inlines = inlines;
-           this.addressTo = addressTo;
-           this.addressFrom = addressFrom;
-           this.dateToSend = dateToSend;
-           this.validity = validity;
-           this.hourFrom = hourFrom;
-           this.hourTo = hourTo;
-           this.deliveryReport = deliveryReport;
-           this.systemName = systemName;
-           this.systemUserName = systemUserName;
-           this.systemId = systemId;
-    }
-
+    @XmlElement(required = true)
+    protected String type;
+    protected String title;
+    protected String content;
+    protected String signature;
+    protected String attachments;
+    protected String inlines;
+    @XmlElement(required = true)
+    protected String addressTo;
+    @XmlElement(required = true)
+    protected String addressFrom;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dateToSend;
+    protected Integer validity;
+    protected Integer hourFrom;
+    protected Integer hourTo;
+    protected Boolean deliveryReport;
+    @XmlElement(required = true)
+    protected String systemName;
+    protected String systemUserName;
+    protected String systemId;
 
     /**
-     * Gets the type value for this QueueMessageType.
+     * Gets the value of the type property.
      * 
-     * @return type
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getType() {
+    public String getType() {
         return type;
     }
 
-
     /**
-     * Sets the type value for this QueueMessageType.
+     * Sets the value of the type property.
      * 
-     * @param type
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setType(java.lang.String type) {
-        this.type = type;
+    public void setType(String value) {
+        this.type = value;
     }
 
-
     /**
-     * Gets the title value for this QueueMessageType.
+     * Gets the value of the title property.
      * 
-     * @return title
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-
     /**
-     * Sets the title value for this QueueMessageType.
+     * Sets the value of the title property.
      * 
-     * @param title
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setTitle(java.lang.String title) {
-        this.title = title;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
-
     /**
-     * Gets the content value for this QueueMessageType.
+     * Gets the value of the content property.
      * 
-     * @return content
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getContent() {
+    public String getContent() {
         return content;
     }
 
-
     /**
-     * Sets the content value for this QueueMessageType.
+     * Sets the value of the content property.
      * 
-     * @param content
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setContent(java.lang.String content) {
-        this.content = content;
+    public void setContent(String value) {
+        this.content = value;
     }
 
-
     /**
-     * Gets the signature value for this QueueMessageType.
+     * Gets the value of the signature property.
      * 
-     * @return signature
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getSignature() {
+    public String getSignature() {
         return signature;
     }
 
-
     /**
-     * Sets the signature value for this QueueMessageType.
+     * Sets the value of the signature property.
      * 
-     * @param signature
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setSignature(java.lang.String signature) {
-        this.signature = signature;
+    public void setSignature(String value) {
+        this.signature = value;
     }
 
-
     /**
-     * Gets the attachments value for this QueueMessageType.
+     * Gets the value of the attachments property.
      * 
-     * @return attachments
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getAttachments() {
+    public String getAttachments() {
         return attachments;
     }
 
-
     /**
-     * Sets the attachments value for this QueueMessageType.
+     * Sets the value of the attachments property.
      * 
-     * @param attachments
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setAttachments(java.lang.String attachments) {
-        this.attachments = attachments;
+    public void setAttachments(String value) {
+        this.attachments = value;
     }
 
-
     /**
-     * Gets the inlines value for this QueueMessageType.
+     * Gets the value of the inlines property.
      * 
-     * @return inlines
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getInlines() {
+    public String getInlines() {
         return inlines;
     }
 
-
     /**
-     * Sets the inlines value for this QueueMessageType.
+     * Sets the value of the inlines property.
      * 
-     * @param inlines
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setInlines(java.lang.String inlines) {
-        this.inlines = inlines;
+    public void setInlines(String value) {
+        this.inlines = value;
     }
 
-
     /**
-     * Gets the addressTo value for this QueueMessageType.
+     * Gets the value of the addressTo property.
      * 
-     * @return addressTo
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getAddressTo() {
+    public String getAddressTo() {
         return addressTo;
     }
 
-
     /**
-     * Sets the addressTo value for this QueueMessageType.
+     * Sets the value of the addressTo property.
      * 
-     * @param addressTo
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setAddressTo(java.lang.String addressTo) {
-        this.addressTo = addressTo;
+    public void setAddressTo(String value) {
+        this.addressTo = value;
     }
 
-
     /**
-     * Gets the addressFrom value for this QueueMessageType.
+     * Gets the value of the addressFrom property.
      * 
-     * @return addressFrom
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getAddressFrom() {
+    public String getAddressFrom() {
         return addressFrom;
     }
 
-
     /**
-     * Sets the addressFrom value for this QueueMessageType.
+     * Sets the value of the addressFrom property.
      * 
-     * @param addressFrom
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setAddressFrom(java.lang.String addressFrom) {
-        this.addressFrom = addressFrom;
+    public void setAddressFrom(String value) {
+        this.addressFrom = value;
     }
 
-
     /**
-     * Gets the dateToSend value for this QueueMessageType.
+     * Gets the value of the dateToSend property.
      * 
-     * @return dateToSend
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public java.util.Calendar getDateToSend() {
+    public XMLGregorianCalendar getDateToSend() {
         return dateToSend;
     }
 
-
     /**
-     * Sets the dateToSend value for this QueueMessageType.
+     * Sets the value of the dateToSend property.
      * 
-     * @param dateToSend
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public void setDateToSend(java.util.Calendar dateToSend) {
-        this.dateToSend = dateToSend;
+    public void setDateToSend(XMLGregorianCalendar value) {
+        this.dateToSend = value;
     }
 
-
     /**
-     * Gets the validity value for this QueueMessageType.
+     * Gets the value of the validity property.
      * 
-     * @return validity
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public java.lang.Integer getValidity() {
+    public Integer getValidity() {
         return validity;
     }
 
-
     /**
-     * Sets the validity value for this QueueMessageType.
+     * Sets the value of the validity property.
      * 
-     * @param validity
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setValidity(java.lang.Integer validity) {
-        this.validity = validity;
+    public void setValidity(Integer value) {
+        this.validity = value;
     }
 
-
     /**
-     * Gets the hourFrom value for this QueueMessageType.
+     * Gets the value of the hourFrom property.
      * 
-     * @return hourFrom
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public java.lang.Integer getHourFrom() {
+    public Integer getHourFrom() {
         return hourFrom;
     }
 
-
     /**
-     * Sets the hourFrom value for this QueueMessageType.
+     * Sets the value of the hourFrom property.
      * 
-     * @param hourFrom
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setHourFrom(java.lang.Integer hourFrom) {
-        this.hourFrom = hourFrom;
+    public void setHourFrom(Integer value) {
+        this.hourFrom = value;
     }
 
-
     /**
-     * Gets the hourTo value for this QueueMessageType.
+     * Gets the value of the hourTo property.
      * 
-     * @return hourTo
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public java.lang.Integer getHourTo() {
+    public Integer getHourTo() {
         return hourTo;
     }
 
-
     /**
-     * Sets the hourTo value for this QueueMessageType.
+     * Sets the value of the hourTo property.
      * 
-     * @param hourTo
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setHourTo(java.lang.Integer hourTo) {
-        this.hourTo = hourTo;
+    public void setHourTo(Integer value) {
+        this.hourTo = value;
     }
 
-
     /**
-     * Gets the deliveryReport value for this QueueMessageType.
+     * Gets the value of the deliveryReport property.
      * 
-     * @return deliveryReport
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public java.lang.Boolean getDeliveryReport() {
+    public Boolean isDeliveryReport() {
         return deliveryReport;
     }
 
-
     /**
-     * Sets the deliveryReport value for this QueueMessageType.
+     * Sets the value of the deliveryReport property.
      * 
-     * @param deliveryReport
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setDeliveryReport(java.lang.Boolean deliveryReport) {
-        this.deliveryReport = deliveryReport;
+    public void setDeliveryReport(Boolean value) {
+        this.deliveryReport = value;
     }
 
-
     /**
-     * Gets the systemName value for this QueueMessageType.
+     * Gets the value of the systemName property.
      * 
-     * @return systemName
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getSystemName() {
+    public String getSystemName() {
         return systemName;
     }
 
-
     /**
-     * Sets the systemName value for this QueueMessageType.
+     * Sets the value of the systemName property.
      * 
-     * @param systemName
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setSystemName(java.lang.String systemName) {
-        this.systemName = systemName;
+    public void setSystemName(String value) {
+        this.systemName = value;
     }
 
-
     /**
-     * Gets the systemUserName value for this QueueMessageType.
+     * Gets the value of the systemUserName property.
      * 
-     * @return systemUserName
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getSystemUserName() {
+    public String getSystemUserName() {
         return systemUserName;
     }
 
-
     /**
-     * Sets the systemUserName value for this QueueMessageType.
+     * Sets the value of the systemUserName property.
      * 
-     * @param systemUserName
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setSystemUserName(java.lang.String systemUserName) {
-        this.systemUserName = systemUserName;
+    public void setSystemUserName(String value) {
+        this.systemUserName = value;
     }
 
-
     /**
-     * Gets the systemId value for this QueueMessageType.
+     * Gets the value of the systemId property.
      * 
-     * @return systemId
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public java.lang.String getSystemId() {
+    public String getSystemId() {
         return systemId;
     }
 
-
     /**
-     * Sets the systemId value for this QueueMessageType.
+     * Sets the value of the systemId property.
      * 
-     * @param systemId
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setSystemId(java.lang.String systemId) {
-        this.systemId = systemId;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof QueueMessageType)) return false;
-        QueueMessageType other = (QueueMessageType) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.type==null && other.getType()==null) || 
-             (this.type!=null &&
-              this.type.equals(other.getType()))) &&
-            ((this.title==null && other.getTitle()==null) || 
-             (this.title!=null &&
-              this.title.equals(other.getTitle()))) &&
-            ((this.content==null && other.getContent()==null) || 
-             (this.content!=null &&
-              this.content.equals(other.getContent()))) &&
-            ((this.signature==null && other.getSignature()==null) || 
-             (this.signature!=null &&
-              this.signature.equals(other.getSignature()))) &&
-            ((this.attachments==null && other.getAttachments()==null) || 
-             (this.attachments!=null &&
-              this.attachments.equals(other.getAttachments()))) &&
-            ((this.inlines==null && other.getInlines()==null) || 
-             (this.inlines!=null &&
-              this.inlines.equals(other.getInlines()))) &&
-            ((this.addressTo==null && other.getAddressTo()==null) || 
-             (this.addressTo!=null &&
-              this.addressTo.equals(other.getAddressTo()))) &&
-            ((this.addressFrom==null && other.getAddressFrom()==null) || 
-             (this.addressFrom!=null &&
-              this.addressFrom.equals(other.getAddressFrom()))) &&
-            ((this.dateToSend==null && other.getDateToSend()==null) || 
-             (this.dateToSend!=null &&
-              this.dateToSend.equals(other.getDateToSend()))) &&
-            ((this.validity==null && other.getValidity()==null) || 
-             (this.validity!=null &&
-              this.validity.equals(other.getValidity()))) &&
-            ((this.hourFrom==null && other.getHourFrom()==null) || 
-             (this.hourFrom!=null &&
-              this.hourFrom.equals(other.getHourFrom()))) &&
-            ((this.hourTo==null && other.getHourTo()==null) || 
-             (this.hourTo!=null &&
-              this.hourTo.equals(other.getHourTo()))) &&
-            ((this.deliveryReport==null && other.getDeliveryReport()==null) || 
-             (this.deliveryReport!=null &&
-              this.deliveryReport.equals(other.getDeliveryReport()))) &&
-            ((this.systemName==null && other.getSystemName()==null) || 
-             (this.systemName!=null &&
-              this.systemName.equals(other.getSystemName()))) &&
-            ((this.systemUserName==null && other.getSystemUserName()==null) || 
-             (this.systemUserName!=null &&
-              this.systemUserName.equals(other.getSystemUserName()))) &&
-            ((this.systemId==null && other.getSystemId()==null) || 
-             (this.systemId!=null &&
-              this.systemId.equals(other.getSystemId())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getType() != null) {
-            _hashCode += getType().hashCode();
-        }
-        if (getTitle() != null) {
-            _hashCode += getTitle().hashCode();
-        }
-        if (getContent() != null) {
-            _hashCode += getContent().hashCode();
-        }
-        if (getSignature() != null) {
-            _hashCode += getSignature().hashCode();
-        }
-        if (getAttachments() != null) {
-            _hashCode += getAttachments().hashCode();
-        }
-        if (getInlines() != null) {
-            _hashCode += getInlines().hashCode();
-        }
-        if (getAddressTo() != null) {
-            _hashCode += getAddressTo().hashCode();
-        }
-        if (getAddressFrom() != null) {
-            _hashCode += getAddressFrom().hashCode();
-        }
-        if (getDateToSend() != null) {
-            _hashCode += getDateToSend().hashCode();
-        }
-        if (getValidity() != null) {
-            _hashCode += getValidity().hashCode();
-        }
-        if (getHourFrom() != null) {
-            _hashCode += getHourFrom().hashCode();
-        }
-        if (getHourTo() != null) {
-            _hashCode += getHourTo().hashCode();
-        }
-        if (getDeliveryReport() != null) {
-            _hashCode += getDeliveryReport().hashCode();
-        }
-        if (getSystemName() != null) {
-            _hashCode += getSystemName().hashCode();
-        }
-        if (getSystemUserName() != null) {
-            _hashCode += getSystemUserName().hashCode();
-        }
-        if (getSystemId() != null) {
-            _hashCode += getSystemId().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
-    // Type metadata
-    private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(QueueMessageType.class, true);
-
-    static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://project4.pl/utils", "queueMessageType"));
-        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("type");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "type"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("title");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "title"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("content");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "content"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("signature");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "signature"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("attachments");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "attachments"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("inlines");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "inlines"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("addressTo");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "addressTo"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("addressFrom");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "addressFrom"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("dateToSend");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "dateToSend"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("validity");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "validity"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("hourFrom");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "hourFrom"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("hourTo");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "hourTo"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("deliveryReport");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "deliveryReport"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("systemName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "systemName"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("systemUserName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "systemUserName"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("systemId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://project4.pl/utils", "systemId"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-    }
-
-    /**
-     * Return type metadata object
-     */
-    public static org.apache.axis.description.TypeDesc getTypeDesc() {
-        return typeDesc;
-    }
-
-    /**
-     * Get Custom Serializer
-     */
-    public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanSerializer(
-            _javaType, _xmlType, typeDesc);
-    }
-
-    /**
-     * Get Custom Deserializer
-     */
-    public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanDeserializer(
-            _javaType, _xmlType, typeDesc);
+    public void setSystemId(String value) {
+        this.systemId = value;
     }
 
 }
